@@ -1,12 +1,69 @@
 [project]
 name = "qcconst"
 version = "0.1.0"
-description = "Physical constants and a user-friendly Periodic Table."
+description = "Physical constants, conversion factors, and a periodic table with clear source information for every value."
 readme = "README.md"
 authors = [{ name = "Colton Hicks", email = "github@coltonhicks.com" }]
 requires-python = ">=3.9"
-dependencies = []
+dependencies = ["tabulate>=0.9.0"]
+license = { file = "LICENSE" }
+
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries",
+    "Operating System :: OS Independent",
+]
+keywords = [
+    "constants",
+    "periodic table",
+    "scientific computing",
+    "conversion factors",
+    "chemistry",
+    "physics",
+]
+
+[project.urls]
+Homepage = 'https://github.com/coltonbh/qcconst'
+Documentation = 'https://github.com/coltonbh/qcconst#readme'
+Source = 'https://github.com/coltonbh/qcconst'
+Changelog = 'https://github.com/coltonbh/qcconst/blob/master/CHANGELOG.md'
+"Bug Tracker" = 'https://github.com/coltonbh/qcconst/issues'
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0",
+    "pytest>=8.3.5",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.11.1",
+    "toml>=0.10.2",
+    "types-tabulate>=0.9.0.20241207",
+    "types-toml>=0.10.8.20240310",
+]
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.ruff]
+exclude = [".venv"]
+line-length = 88
+target-version = "py39"
+
+[tool.coverage.run]
+branch = true
+source = ["qcconst"]
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.ruff.lint]
+isort = { known-first-party = ["qcconst", "tests"] }
+select = ["I", "F401"]

@@ -1,0 +1,12 @@
+[project]
+name = "qcconst"
+version = "0.1.0"
+description = "Physical constants and a user-friendly Periodic Table."
+readme = "README.md"
+authors = [{ name = "Colton Hicks", email = "github@coltonhicks.com" }]
+requires-python = ">=3.9"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

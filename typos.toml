@@ -1,0 +1,2 @@
+[files]
+extend-exclude = ["src/qcconst/data/**", "tests/test_periodic_table.py"]

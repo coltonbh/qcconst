@@ -1,5 +1,15 @@
 """Physical constants from NIST CODATA 2022 and PubChem. All values must have a reference to their source.
 
+Developer Notes:
+    - The constants are loaded from a CSV file and set as module attributes.
+    - The `Constant` class is a subclass of `float` that holds additional metadata.
+    - The `as_list` function returns a list of all defined constants.
+    - The `show` function prints a human-readable table of all constants.
+    - The `sources` list contains all sources for constants and conversion factors.
+    - I considered subclassing dict for a ConstantsDict so that it has typical .keys(), .values(), and .items() methods.
+        However, I decided against it because one looses IDE autocompletion for the constants as module-level attributes,
+        which is more convenient for users.
+
 References:
     - <https://physics.nist.gov/cuu/Constants/Table/allascii.txt>
 """

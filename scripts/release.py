@@ -10,7 +10,7 @@ def get_repo_url():
     try:
         with open("pyproject.toml") as file:
             pyproject = toml.load(file)
-        repo_url = pyproject["tool"]["poetry"]["repository"]
+        repo_url = pyproject["project"]["urls"]["Source"]
         return repo_url
     except KeyError:
         return input("Enter the repository URL (e.g., https://github.com/user/repo): ")

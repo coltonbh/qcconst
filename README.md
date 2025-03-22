@@ -71,6 +71,10 @@ Atom(symbol='Ni', number=28, name='Nickel', mass=58.6934, group=10, period=4, bl
 >>>pt.Ni.number
 28
 
+# Lookup by atomic number
+>>> pt.number(4)
+Atom(symbol='Be', number=4, name='Beryllium', mass=9.012183, group=2, period=2, block='Alkaline earth metal', electron_config='[He]2s2')
+
 >>> pt.group(1)
 [Atom(symbol='H', number=1, name='Hydrogen', mass=1.00784, group=1, period=1, block='s', electron_config='1s1'),
 Atom(symbol='Li', number=3, name='Lithium', mass=6.94, group=1, period=2, block='s', electron_config='[He] 2s1'),

@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [unreleased]
 
+## [0.1.2] - 2025-04-01
+
 ### Changed
 
 - GitHub workflows now trigger on `pull_request` and only pushes to `master`.
@@ -25,6 +27,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Core physical constants, periodic table, and solvent properties.
 - Common API for showing available constants and solvents.
 
-[unreleased]: https://github.com/coltonbh/qcconst/compare/0.1.1...HEAD
+[unreleased]: https://github.com/coltonbh/qcconst/compare/0.1.2...HEAD
+[0.1.2]: https://github.com/coltonbh/qcconst/releases/tag/0.1.2
 [0.1.1]: https://github.com/coltonbh/qcconst/releases/tag/0.1.1
 [0.1.0]: https://github.com/coltonbh/qcconst/releases/tag/0.1.0

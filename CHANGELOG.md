@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [unreleased]
 
+### Changed
+
+- GitHub workflows now trigger on `pull_request` and only pushes to `master`.
+- Version update in `release.py` now happens with `re` package rather than `poetry`.
+- Added `write` permission to `create-release.yaml` GitHub action.
+
 ## [0.1.1] - 2025-03-24
 
 ### Added

@@ -6,6 +6,8 @@ on:
       - "*" # Match any tag
   workflow_dispatch: # Enable manual triggering
 
+permissions:
+  contents: write
 
 jobs:
   create-release:

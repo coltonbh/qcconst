@@ -1,7 +1,7 @@
 """Physical constants from NIST CODATA 2022 and PubChem. All values must have a reference to their source.
 
 Developer Notes:
-    - The constants are loaded from a CSV file and set as module attributes.
+    - The constants are loaded from a csv file and set as module attributes.
     - The `Constant` class is a subclass of `float` that holds additional metadata.
     - The `as_list` function returns a list of all defined constants.
     - The `show` function prints a human-readable table of all constants.
@@ -18,30 +18,17 @@ import csv
 import inspect
 import sys
 from pathlib import Path
+from typing import Optional
 
+from .models import Value
 from .utils import to_table
 
-
-class Constant(float):
-    """A float subclass holding additional metadata."""
-
-    unit: str
-    source: str
-    notes: str
-
-    def __new__(cls, value, unit: str, source: str, notes: str):
-        obj = float.__new__(cls, value)
-        obj.unit = unit
-        obj.source = source
-        obj.notes = notes
-        return obj
-
-    def __repr__(self):
-        return f"{float(self)}, unit={self.unit}, source={self.source} {'notes=' + self.notes if self.notes else ''}"
+# For auto-completion in IDEs
+__all__ = []  # filled by _load_constants and _load_codata
 
 
 def _load_constants(csv_path: Path):
-    """Load constants from CSV and set as module attributes."""
+    """Load constants from csv and set as module attributes."""
     current_module = sys.modules[__name__]
     with csv_path.open() as f:
         reader = csv.DictReader(f)
@@ -50,13 +37,51 @@ def _load_constants(csv_path: Path):
             value = float(row["value"])
             unit = row["unit"]
             source = row["source"]
+            uncertainty = float(row["uncertainty"]) if row["uncertainty"] else None
             notes = row["notes"]
-            setattr(current_module, name, Constant(value, unit, source, notes))
+            setattr(
+                current_module, name, Value(value, unit, source, uncertainty, notes)
+            )
+            __all__.append(name)  # Add the name to the module's __all__ list
+
+
+def _load_codata(year: int):
+    """Load CODATA constants from a csv file."""
+    codata_path = Path(__file__).parent / "data" / f"codata{year}.csv"
+
+    def _process_float(value: str) -> Optional[float]:
+        """Handle CODATA's spaces and ellipses in float values."""
+        return float(row["value"].replace(" ", "").replace("...", ""))
+
+    codata = {}
+    with codata_path.open() as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            name = row["quantity"]
+            # Remove spaces and ellipses from the value
+            value = _process_float(row["value"])
+            uncertainty = (
+                _process_float(row["uncertainty"])
+                if row["uncertainty"] != "(exact)"
+                else 0.0
+            )
+            unit = row["unit"]
+            source = f"CODATA {year}: https://physics.nist.gov/cuu/Constants/Table/allascii.txt"
+            codata[name] = Value(
+                value, unit, source, uncertainty=uncertainty, notes=""
+            )
+
+    # Set the codata attribute in the module
+    current_module = sys.modules[__name__]
+    setattr(current_module, f"codata{year}", codata)
+    # Add the names to the module's __all__ list
+    __all__.append(f"codata{year}")
 
 
 # Load constants at import time
 _load_constants(Path(__file__).parent / "data" / "constants.csv")
-
+_load_codata(2022)  # CODATA 2022 constants
+phys = getattr(sys.modules[__name__], "codata2022")  # Alias for the CODATA 2022 constants
 
 def as_list():
     """Return a list of all defined constants."""
@@ -81,6 +106,7 @@ def show():
                 "name": name,
                 "value": float(constant),
                 "unit": constant.unit,
+                "uncertainty": constant.uncertainty,
                 "source": constant.source,
             }
         )
@@ -101,3 +127,9 @@ def _sources():
 
 
 sources = _sources()
+
+
+def __dir__():
+    """Override the default dir() to show only constants and dunder methods."""
+    # This is a workaround to avoid showing all module attributes in the tab-completion.
+    return __all__ + [n for n in globals() if n.startswith("__") and n.endswith("__")]

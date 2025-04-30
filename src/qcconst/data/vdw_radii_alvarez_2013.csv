@@ -1,0 +1,94 @@
+z,symbol,bondi,batsanov,vdw_radius,rho_vdw,n_data_points,notes
+1,H,1.2,,1.2,66,9888,"D⋯D, neutron diffraction, O and N excluded"
+2,He,1.4,,[1.43],,12,He-water clathrate
+3,Li,1.81,2.2,2.12,76,11 067,Zero-coordinated Li disregarded
+4,Be,,1.9,1.98,90,3515,
+5,B,,1.8,1.91,70,152 194,
+6,C,1.7,1.7,1.77,82,385 475,"Only sp3 C atoms, R ≤ 2.5%"
+7,N,1.55,1.6,1.66,52,187 967,"N⋯N contacts, R ≤ 3.5%"
+8,O,1.52,1.55,1.5,73,420 207,"OH excluded, R ≤ 3.5%"
+9,F,1.47,1.5,1.46,66,497 497,OH excluded
+10,Ne,1.54,,[1.58],,12,Ne⋯Ne in solid Ne
+11,Na,2.27,2.4,2.5,51,16 016,"Zero-coordinated Na disregarded, OH excluded"
+12,Mg,1.73,2.2,2.51,92,11 581,Zero-coordinated Mg disregarded
+13,Al,,2.1,2.25,75,9877,
+14,Si,2.22,2.1,2.19,55,15 077,
+15,P,1.8,1.95,1.9,67,178 077,OH excluded
+16,S,1.8,1.8,1.89,58,741 158,"OH excluded, R ≤ 7.5%"
+17,Cl,1.75,1.8,1.82,69,641 448,"OH excluded, monocoordinated Cl only"
+18,Ar,1.76,,1.83,93,527,Ar⋯C contacts
+19,K,2.75,2.8,2.73,28,76 013,Zero-coordinated K disregarded
+20,Ca,,2.4,2.62,78,5420,Zero-coordinated Ca disregarded
+21,Sc,,2.3,2.58,93,1287,
+22,Ti,,2.15,2.46,36,6685,
+23,V,,2.05,2.42,37,17 485,Polyoxometallates and OH excluded
+24,Cr,,2.05,2.45,71,60 314,
+25,Mn,,2.05,2.45,79,81 976,
+26,Fe,,2.05,2.44,67,207 868,
+27,Co,,2,2.4,81,186 046,
+28,Ni,1.63,2,2.4,76,115 164,
+29,Cu,1.4,2,2.38,75,42 451,Only six-coordinated Cu
+30,Zn,1.39,2.1,2.39,74,68 186,
+31,Ga,1.87,2.1,2.32,80,6066,
+32,Ge,,2.1,2.29,50,13 207,
+33,As,1.85,2.05,1.88,54,22 962,OH excluded
+34,Se,1.9,1.9,1.82,46,36 624,OH excluded
+35,Br,1.83,1.9,1.86,68,172 324,Monocoordinated Br only
+36,Kr,2.02,,2.25,98,131,
+37,Rb,,2.9,3.21,33,1960,Zero-coordinated Rb disregarded
+38,Sr,,2.55,2.84,84,2094,Zero-coordinated Sr disregarded
+39,Y,,2.4,2.75,89,3487,
+40,Zr,,2.3,2.52,64,5523,
+41,Nb,,2.15,2.56,50,3647,Polynuclear excluded
+42,Mo,,2.1,2.45,63,138 249,
+43,Tc,,2.05,2.44,79,2880,
+44,Ru,,2.05,2.46,73,165 471,
+45,Rh,,2,2.44,54,34 854,
+46,Pd,1.63,2.05,2.15,49,35 830,
+47,Ag,1.72,2.1,2.53,50,27 221,Zero-coordinated Ag disregarded
+48,Cd,1.62,2.2,2.49,74,21 952,
+49,In,1.93,2.2,2.43,80,5230,
+50,Sn,2.17,2.25,2.42,44,30 075,
+51,Sb,,2.2,2.47,26,15 850,Polynuclear excluded
+52,Te,2,2.1,1.99,67,13 772,OH excluded
+53,I,1.98,2.1,2.04,53,56 317,Monocoordinated I only
+54,Xe,2.16,,2.06,86,2264,Xe⋯C contacts
+55,Cs,,3,3.48,46,775,Zero-coordinated Cs disregarded
+56,Ba,,2.7,3.03,58,2402,Zero-coordinated Ba disregarded
+57,La,,2.5,2.98,80,6471,Zero-coordinated La disregarded
+58,Ce,,,2.88,81,3681,Zero-coordinated Ce disregarded
+59,Pr,,,2.92,78,3360,
+60,Nd,,,2.95,81,6346,
+62,Sm,,,2.9,84,4162,
+63,Eu,,,2.87,80,7042,
+64,Gd,,,2.83,84,6682,
+65,Tb,,,2.79,81,5538,
+66,Dy,,,2.87,83,3615,
+67,Ho,,,2.81,82,2493,
+68,Er,,,2.83,86,4246,
+69,Tm,,,2.79,84,1141,
+70,Yb,,,2.8,83,4664,
+71,Lu,,,2.74,86,2018,
+72,Hf,,2.25,2.63,86,936,
+73,Ta,,2.2,2.53,80,2793,Polynuclear excluded
+74,W,,2.1,2.57,62,47 936,Polynuclear excluded
+75,Re,,2.05,2.49,75,61 593,
+76,Os,,2,2.48,90,129 040,
+77,Ir,,2,2.41,73,18 335,
+78,Pt,1.72,2.05,2.29,67,55 873,
+79,Au,1.66,2.1,2.32,49,5132,Only square planar Au
+80,Hg,1.7,2.05,2.45,81,30 628,Coordination number two or higher for Hg
+81,Tl,1.96,2.2,2.47,71,3486,
+82,Pb,2.02,2.3,2.6,49,36 781,
+83,Bi,,2.3,2.54,43,14 030,
+89,Ac,,,[2.8],,33,Ac⋯Cl contacts in AcCl3
+90,Th,,2.4,2.93,83,964,
+91,Pa,,,[2.88],94,48,Pa⋯C contacts in (NEt4)[PaOCl5]
+92,U,1.86,2.3,2.71,74,35 070,OH excluded
+93,Np,,,2.82,55,830,OH excluded
+94,Pu,,,2.81,77,1299,
+95,Am,,,2.83,94,128,
+96,Cm,,,[3.05],99,90,
+97,Bk,,,[3.4],,3,Bk⋯Cl contacts in Cs2BkCl6
+98,Cf,,,[3.05],100,14,Only one crystal structure
+99,Es,,,[2.7],,2,Es⋯Cl contacts in EsCl3

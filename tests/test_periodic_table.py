@@ -5,11 +5,7 @@ from qcconst import periodic_table as pt
 
 
 def test_periodic_table_from_pubchem():
-    pt = PeriodicTable.from_pubchem()
-    assert pt.sources == [
-        "https://pubchem.ncbi.nlm.nih.gov/periodic-table",
-        "https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/CSV?response_type=save&response_basename=PubChemElements_all",
-    ]
+    pt = PeriodicTable.from_data()
 
 
 def test_group_period_lookup_params():

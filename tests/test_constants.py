@@ -5,7 +5,7 @@ def test_constants():
     # Assert that all constants have a unit and source
     for name in constants.as_list():
         constant = getattr(constants, name)
-        assert constant  # Not None
+        assert constant is not None
         assert constant.unit
         assert constant.source
 

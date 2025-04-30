@@ -6,6 +6,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [unreleased]
 
+### Added
+
+- Added all `CODATA 2022` values at `constants.codata2022` as a dictionary with keys corresponding to the `CODATA 2022` names given at https://physics.nist.gov/cuu/Constants/Table/allascii.txt.
+- `constants.phys` points to the latest CODATA release (currently 2022).
+- Covalent radii for elements from Cordero et. al. 2008: <https://doi.org/10.1039/b801115j>.
+- van der Waals radii from Alvarez 2013: <https://doi.org/10.1039/C3DT50599E>.
+- Atomic radii from the existing PubChem data <https://pubchem.ncbi.nlm.nih.gov/periodic-table>.
+- Electronegativity from the existing PubChem data <https://pubchem.ncbi.nlm.nih.gov/periodic-table>.
+- Double and triple bond covalent radii from Pyykkö <https://doi.org/10.1002/chem.200901472>.
+
+### Changed
+
+- Renamed `Atom` -> `Element`.
+
+### Removed
+
+- `PeriodicTable.sources` in favor of using `Value` and sourcing for each value in the table.
+- `tabulate` dependency in favor or internal `_tabulate()` function.
+
 ## [0.1.2] - 2025-04-01
 
 ### Changed

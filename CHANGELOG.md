@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [unreleased]
 
+## [0.2.1] - 2025-05-31
+
 ### Added
 
 - `hatchling` build hook to autogenerate a `constants.pyi` stub file so static checking (`mypy`) can pass in other repos that use `constants.SOME_VALUE`.
@@ -52,7 +54,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Core physical constants, periodic table, and solvent properties.
 - Common API for showing available constants and solvents.
 
-[unreleased]: https://github.com/coltonbh/qcconst/compare/0.2.0...HEAD
+[unreleased]: https://github.com/coltonbh/qcconst/compare/0.2.1...HEAD
+[0.2.1]: https://github.com/coltonbh/qcconst/releases/tag/0.2.1
 [0.2.0]: https://github.com/coltonbh/qcconst/releases/tag/0.2.0
 [0.1.2]: https://github.com/coltonbh/qcconst/releases/tag/0.1.2
 [0.1.1]: https://github.com/coltonbh/qcconst/releases/tag/0.1.1

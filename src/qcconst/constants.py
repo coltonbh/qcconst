@@ -24,7 +24,7 @@ from .models import Value
 from .utils import to_table
 
 # For auto-completion in IDEs
-__all__ = []  # filled by _load_constants and _load_codata
+__all__ = ["phys"]  # and filled dynamically by _load_constants and _load_codata
 
 
 def _load_constants(csv_path: Path):
@@ -67,9 +67,7 @@ def _load_codata(year: int):
             )
             unit = row["unit"]
             source = f"CODATA {year}: https://physics.nist.gov/cuu/Constants/Table/allascii.txt"
-            codata[name] = Value(
-                value, unit, source, uncertainty=uncertainty, notes=""
-            )
+            codata[name] = Value(value, unit, source, uncertainty=uncertainty, notes="")
 
     # Set the codata attribute in the module
     current_module = sys.modules[__name__]
@@ -81,7 +79,10 @@ def _load_codata(year: int):
 # Load constants at import time
 _load_constants(Path(__file__).parent / "data" / "constants.csv")
 _load_codata(2022)  # CODATA 2022 constants
-phys = getattr(sys.modules[__name__], "codata2022")  # Alias for the CODATA 2022 constants
+phys = getattr(
+    sys.modules[__name__], "codata2022"
+)  # Alias for the CODATA 2022 constants
+
 
 def as_list():
     """Return a list of all defined constants."""

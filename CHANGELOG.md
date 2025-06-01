@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [unreleased]
 
+### Added
+
+- `hatchling` build hook to autogenerate a `constants.pyi` stub file so static checking (`mypy`) can pass in other repos that use `constants.SOME_VALUE`.
+- Fallback value to package `version` in `__init__.py`. Needed for running build scripts since the repo isn't "installed" yet and this lookup using `metadata.version()` fails.
+
 ## [0.2.0] - 2025-05-01
 
 ### Added
